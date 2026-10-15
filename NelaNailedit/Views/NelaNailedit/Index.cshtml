@@ -1,0 +1,74 @@
+﻿<div ng-init="initFunc()">
+    <div class="row">
+        <div class="col s12 m10 offset-m1 card-brand">
+            <h4 class="center-align brand-title-text">VIP Loyalty Rewards Registration</h4>
+
+            <div class="row">
+                <!-- First Name -->
+                <div class="input-field col s12 m3">
+                    <i class="material-icons prefix">person_outline</i>
+                    <input id="txtFirstname" type="text" class="validate" ng-model="txtFirstname" required>
+                    <label for="txtFirstname">First Name *</label>
+                </div>
+
+                <!-- Middle Name -->
+                <div class="input-field col s12 m3">
+                    <i class="material-icons prefix">person_outline</i>
+                    <input id="txtMiddlename" type="text" class="validate" ng-model="txtMiddlename" required>
+                    <label for="txtMiddlename">Middle Name *</label>
+                </div>
+
+                <!-- Last Name -->
+                <div class="input-field col s12 m3">
+                    <i class="material-icons prefix">person_outline</i>
+                    <input id="txtLastname" type="text" class="validate" ng-model="txtLastname" required>
+                    <label for="txtLastname">Last Name *</label>
+                </div>
+
+                <!-- Avail Service -->
+                <div class="input-field col s12 m3">
+                    <i class="material-icons prefix">style</i>
+                    <input id="txtService" type="text" class="validate" ng-model="txtService" required>
+                    <label for="txtService">Nail Service *</label>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="center-align">
+                <button class="btn btn-brand waves-effect waves-light" ng-click="RegisterMemberFunc()">Register Member</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Members Table -->
+    <div class="row top-margin-spaced">
+        <div class="col s12 card-brand">
+            <h5 class="brand-title-text">Active Loyalty Members (Total: {{ userarray.length }})</h5>
+            <table class="striped highlight responsive-table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Availed Service</th>
+                        <th>Loyalty Points</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="udata in userarray">
+                        <td>{{ udata.FName }}</td>
+                        <td>{{ udata.MName }}</td>
+                        <td>{{ udata.LName }}</td>
+                        <td>{{ udata.Service }}</td>
+                        <td><span class="new badge marikina-badge" data-badge-caption="pts">{{ udata.Points }}</span></td>
+                        <td>
+                            <button class="btn-small amber darken-2 waves-effect waves-light" ng-click="editFunc($index)">Edit</button>
+                            <button class="btn-small red darken-2 waves-effect waves-light" ng-click="deleteFunc($index)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

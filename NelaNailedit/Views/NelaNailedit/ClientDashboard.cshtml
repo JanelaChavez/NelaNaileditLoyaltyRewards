@@ -1,0 +1,61 @@
+﻿<div class="row" ng-if="activeUser">
+    <div class="col s12">
+        <div class="card card-brand">
+            <div class="card-content">
+                <span class="card-title brand-title-text">
+                    Welcome, {{activeUser.FName}} {{activeUser.LName}}! 💅
+                </span>
+
+                <div class="row top-margin-spaced">
+                    <!-- VIP Badge -->
+                    <div class="col s12 m4">
+                        <div class="card-panel center-align" ng-class="activeUser.IsVip ? 'pink lighten-5' : 'grey lighten-4'">
+                            <i class="material-icons large" ng-class="activeUser.IsVip ? 'brand-title-text' : 'grey-text'">stars</i>
+                            <h5>{{ activeUser.IsVip ? activeUser.VipId : 'Loyalty Member' }}</h5>
+                            <p ng-if="activeUser.IsVip" class="brand-title-text"><b>VIP Status Unlocked!</b></p>
+                            <p ng-if="!activeUser.IsVip" class="grey-text">Spend ₱5,000 to unlock permanent VIP Status.</p>
+                        </div>
+                    </div>
+
+                    <!-- ₱5,000 Progress Tracker -->
+                    <div class="col s12 m8">
+                        <div class="card-panel">
+                            <h5>₱5,000 VIP Progress Tracker</h5>
+                            <h6>Total Spent: <b>₱{{activeUser.TotalSpent}}</b> / ₱5,000</h6>
+                            <div class="progress pink lighten-4 vip-progress-bar-container">
+                                <div class="determinate brand-nav" style="width: {{(activeUser.TotalSpent / 5000) * 100}}%"></div>
+                            </div>
+                            <p class="grey-text">
+                                {{ activeUser.TotalSpent >= 5000 ? 'You have earned your VIP Badge!' : 'You need ₱' + (5000 - activeUser.TotalSpent) + ' more in appointments to get VIP status.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perks Section -->
+                <h5 class="brand-title-text">Your Privileges & Perks</h5>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card-panel">
+                            <h6>Birthday Month Perk</h6>
+                            <p><b>25% OFF</b> on your nail session during your birth month (<b>{{activeUser.BirthDate}}</b>).</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m6">
+                        <div class="card-panel">
+                            <h6>Tiered Reward Tracker</h6>
+                            <p>Visits Completed: <b>{{activeUser.VisitCount}}</b></p>
+                            <p class="brand-title-text" ng-if="activeUser.VisitCount % 6 === 0 && activeUser.VisitCount > 0">
+                                <b>🎉 You have unlocked a FREE Nail Art Add-on for your next session!</b>
+                            </p>
+                            <p ng-if="activeUser.VisitCount % 6 !== 0">
+                                Complete <b>{{6 - (activeUser.VisitCount % 6)}}</b> more visits to unlock a free Nail Art Add-on!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

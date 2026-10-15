@@ -1,0 +1,55 @@
+﻿<div class="row">
+    <div class="col s12">
+        <div class="card-panel admin-header-card brand-nav white-text">
+            <h5>👑 Admin Master Management Dashboard</h5>
+            <p>Manage registered clients, record appointment amounts, and track VIP milestones.</p>
+        </div>
+
+        <h5 class="top-margin-spaced">Registered Members Database ({{userarray.length}})</h5>
+
+        <table class="striped responsive-table card table-top-margin">
+            <thead>
+                <tr>
+                    <th>VIP Status</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Contact / Email</th>
+                    <th>Birthdate</th>
+                    <th>Total Spent (Target: ₱5,000)</th>
+                    <th>Visits</th>
+                    <th>Admin Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in userarray">
+                    <td>
+                        <span class="new badge green" data-badge-caption="" ng-if="user.IsVip">{{user.VipId}}</span>
+                        <span class="new badge grey" data-badge-caption="" ng-if="!user.IsVip">MEMBER</span>
+                    </td>
+                    <td><b>{{user.FName}} {{user.LName}}</b></td>
+                    <td>{{user.Username}}</td>
+                    <td>{{user.Contact}}<br><small class="grey-text">{{user.Email}}</small></td>
+                    <td>{{user.BirthDate}}</td>
+                    <td>
+                        ₱{{user.TotalSpent}} / ₱5,000
+                        <div class="progress">
+                            <div class="determinate" style="width: {{(user.TotalSpent / 5000) * 100}}%"></div>
+                        </div>
+                    </td>
+                    <td>
+                        {{user.VisitCount}} visits
+                        <br>
+                        <span class="free-art-text" ng-if="user.VisitCount % 6 === 0 && user.VisitCount > 0">🎁 Free Art Ready!</span>
+                    </td>
+                    <td>
+                        <div class="action-flex-container">
+                            <input id="appointmentAmount_{{$index}}" type="number" placeholder="₱ Amount" ng-model="appointmentAmount" class="appointment-input-field">
+                            <button class="btn-small green" ng-click="addAppointmentFunc($index, appointmentAmount)">+ Set</button>
+                            <button class="btn-small red" ng-click="deleteFunc($index)"><i class="material-icons">delete</i></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

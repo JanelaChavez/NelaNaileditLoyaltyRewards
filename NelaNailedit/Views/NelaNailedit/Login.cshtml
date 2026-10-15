@@ -1,0 +1,50 @@
+﻿<div class="row top-margin-spaced" ng-controller="NelaNaileditController">
+    <div class="col s12 m6 offset-m3">
+        <div class="card card-brand">
+            <div class="card-content">
+                <span class="card-title center-align brand-title-text">
+                    {{ loginData.role === 'admin' ? 'Admin Portal Login' : 'Client Loyalty Login' }}
+                </span>
+
+                <!-- Role Switcher -->
+                <div class="center-align top-margin-spaced">
+                    <button type="button"
+                            class="btn-small"
+                            ng-class="loginData.role === 'client' ? 'btn-brand' : 'grey lighten-1'"
+                            ng-click="setLoginRole('client')">
+                        Client
+                    </button>
+                    <button type="button"
+                            class="btn-small"
+                            ng-class="loginData.role === 'admin' ? 'btn-brand' : 'grey lighten-1'"
+                            ng-click="setLoginRole('admin')">
+                        Admin
+                    </button>
+                </div>
+
+                <form ng-submit="LoginFunc()">
+                    <!-- Username -->
+                    <div class="input-field">
+                        <i class="material-icons prefix brand-title-text">account_circle</i>
+                        <input id="txtLoginUsername" type="text" ng-model="loginData.username" required autocomplete="username">
+                        <label for="txtLoginUsername">Username</label>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="input-field">
+                        <i class="material-icons prefix brand-title-text">lock</i>
+                        <input id="txtLoginPassword" type="password" ng-model="loginData.password" required autocomplete="current-password">
+                        <label for="txtLoginPassword">Password</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="center-align top-margin-spaced">
+                        <button type="submit" class="btn btn-brand waves-effect waves-light">
+                            Login as {{ (loginData.role || 'client') | uppercase }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

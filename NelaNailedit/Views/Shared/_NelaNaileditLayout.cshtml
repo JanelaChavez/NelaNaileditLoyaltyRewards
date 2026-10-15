@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html ng-app="NelaNaileditModule">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NelaNailedit VIP Loyalty Rewards</title>
+
+    <!-- Materialize CSS & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- External Custom CSS File -->
+    <link rel="stylesheet" href="~/Content/NelaNaileditCustom.css">
+</head>
+<body ng-controller="NelaNaileditController">
+
+    <!-- Navigation Header -->
+    <nav class="nav-wrapper brand-navbar">
+        <div class="container">
+            <a href="/NelaNailedit/Index" class="brand-logo">Nela Nailed It</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/NelaNailedit/Registration">Loyalty Registration</a></li>
+                <li><a href="/NelaNailedit/About">About</a></li>
+                <li><a href="/NelaNailedit/Contact">Contact</a></li>
+                <li><a href="/NelaNailedit/Login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Body View Content Container -->
+    <div class="container main-layout-container">
+        @RenderBody()
+    </div>
+
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- HolyScripts Modular Pipeline -->
+    <script src="~/Scripts/HolyScripts/modules.js"></script>
+    <script src="~/Scripts/HolyScripts/service.js"></script>
+    <script src="~/Scripts/HolyScripts/controller.js"></script>
+</body>
+</html>

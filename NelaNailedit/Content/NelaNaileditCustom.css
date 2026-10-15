@@ -1,0 +1,150 @@
+﻿:root {
+    --mulled-wine: #49110B;
+    --woodland: #56483B;
+    --antique-marble: #C8C2B7;
+    --charcoal-smoke: #191A1E;
+    --sandlight: #AD9E89;
+    --goat-milk: #E7E5DB;
+}
+
+body {
+    background-color: var(--goat-milk);
+    color: var(--charcoal-smoke);
+}
+
+.brand-nav {
+    background-color: var(--mulled-wine) !important;
+}
+
+.btn-brand {
+    background-color: var(--mulled-wine) !important;
+    color: #ffffff !important;
+}
+
+.card-brand {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Page Layout Spacing & Structure */
+.main-layout-container {
+    margin-top: 30px;
+}
+
+.admin-header-card {
+    padding: 25px;
+}
+
+    .admin-header-card h5 {
+        margin: 0 0 10px 0;
+        font-weight: 700;
+    }
+
+    .admin-header-card p {
+        margin: 0;
+    }
+
+.table-top-margin {
+    margin-top: 15px;
+}
+
+.free-art-text {
+    color: var(--mulled-wine);
+    font-weight: bold;
+}
+
+.action-flex-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.appointment-input-field {
+    width: 80px;
+    height: 30px;
+    font-size: 0.8rem;
+}
+
+.brand-title-text {
+    color: var(--mulled-wine);
+    font-weight: bold;
+}
+
+.top-margin-spaced {
+    margin-top: 20px;
+}
+
+.marikina-badge {
+    background-color: var(--mulled-wine) !important;
+}
+
+.card-padded-intro {
+    padding: 25px 20px;
+    margin-top: 10px;
+}
+
+.section-divider {
+    margin: 15px 0 25px 0;
+    background-color: var(--sandlight);
+}
+
+.flow-text-custom {
+    line-height: 1.8;
+    color: var(--charcoal-smoke);
+}
+
+.card-padded-large {
+    padding: 30px;
+}
+
+.full-height-card {
+    background-color: var(--goat-milk) !important;
+    padding: 20px 15px;
+    height: 100%;
+}
+
+.card-callout-action {
+    padding: 35px 20px;
+    background-color: var(--antique-marble) !important;
+}
+
+.flex-contact-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-brand-colored {
+    color: var(--mulled-wine);
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.social-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-btn-ig {
+    background-color: var(--mulled-wine) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+}
+
+.social-btn-fb {
+    background-color: var(--woodland) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    color: var(--goat-milk) !important;
+}
+
+.vip-progress-bar-container {
+    height: 15px;
+    border-radius: 10px;
+}

@@ -1,0 +1,70 @@
+﻿<div class="container margin-top-spaced" ng-controller="NelaNaileditController">
+    <div class="row">
+        <div class="col s12 m10 offset-m1 l8 offset-l2">
+            <div class="card card-brand">
+                <div class="card-content">
+                    <span class="card-title brand-title-text center-align">Join Our Loyalty Rewards Program</span>
+                    <p class="center-align flow-text-custom mb-4">Register today to start earning points and exclusive salon rewards!</p>
+
+                    <div>
+                        <!-- First Name -->
+                        <div class="input-field">
+                            <i class="material-icons prefix brand-title-text">person</i>
+                            <input id="first_name" type="text" ng-model="formData.txtFirstname" autocomplete="given-name">
+                            <label for="first_name">First Name *</label>
+                        </div>
+
+                        <!-- Middle Name -->
+                        <div class="input-field">
+                            <i class="material-icons prefix brand-title-text">person_outline</i>
+                            <input id="middle_name" type="text" ng-model="formData.txtMiddlename" autocomplete="additional-name">
+                            <label for="middle_name">Middle Name (Optional)</label>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="input-field">
+                            <i class="material-icons prefix brand-title-text">person</i>
+                            <input id="last_name" type="text" ng-model="formData.txtLastname" autocomplete="family-name">
+                            <label for="last_name">Last Name *</label>
+                        </div>
+
+                        <!-- Preferred Username -->
+                        <div class="input-field">
+                            <i class="material-icons prefix brand-title-text">account_circle</i>
+                            <input id="user_name" type="text" ng-model="formData.txtUsername" autocomplete="username">
+                            <label for="user_name">Username *</label>
+                        </div>
+
+                        <!-- Contact Number -->
+                        <div class="input-field">
+                            <i class="material-icons prefix brand-title-text">phone</i>
+                            <input id="contact_number" type="text" ng-model="formData.txtContact" autocomplete="tel">
+                            <label for="contact_number">Contact Number *</label>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="input-field">
+                            <i class="material-icons prefix brand-title-text">email</i>
+                            <input id="email" type="text" ng-model="formData.txtEmail" autocomplete="email">
+                            <label for="email">Email Address *</label>
+                        </div>
+
+                        <!-- Birthday -->
+                        <div class="input-field">
+                            <i class="material-icons prefix brand-title-text">cake</i>
+                            <input id="birthday" type="text" ng-model="formData.txtBirthDate" placeholder="MM/DD/YYYY" autocomplete="bday">
+                            <label for="birthday" class="active">Birthday *</label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="center-align top-margin-spaced">
+                            <button type="button" ng-click="RegisterName()" class="btn btn-brand waves-effect waves-light btn-large">
+                                Register for Rewards <i class="material-icons right">star</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
